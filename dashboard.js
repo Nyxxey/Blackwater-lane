@@ -356,7 +356,7 @@ document.addEventListener('click', function(e) {
 // ===== Live Clock =====
 function updateClock() {
   const now = new Date();
-  const timeStr = now.toLocaleTimeString('en-US', { hour12: false });
+  const timeStr = now.toLocaleTimeString('en-US', { hour12: true });
   const dateStr = now.toLocaleDateString('en-US', {
     weekday: 'long',
     year: 'numeric',
