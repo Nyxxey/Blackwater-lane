@@ -4,4 +4,4 @@ here will be most of the files for the ARG like videos, powerpoints and more if 
 
 
 
-Aolf hyl uva ylhs jvwz kvua ilspcl aolt.
+Aolf hyl uva ylhs jvwz kvu'a ilspcl aolt.
