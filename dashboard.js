@@ -1,3 +1,17 @@
+// ===== Load Officer Info =====
+const officerData = JSON.parse(sessionStorage.getItem('officer') || '{"name":"J. Ford","badge":"2323"}');
+const officerLast = officerData.name.split('. ')[1] || officerData.name;
+
+document.getElementById('navOfficerName').textContent = 'Officer ' + officerData.name;
+document.getElementById('navOfficerBadge').textContent = 'Badge #' + officerData.badge;
+document.getElementById('welcomeMsg').textContent = 'Welcome back, Officer ' + officerLast + '. Stay vigilant.';
+document.getElementById('modalOfficer').textContent = 'Officer ' + officerData.name + ' \u2014 Badge #' + officerData.badge + ' \u2014 Precinct 7';
+
+// Clear session on logout
+document.getElementById('logoutBtn').addEventListener('click', function() {
+  sessionStorage.removeItem('officer');
+});
+
 // ===== Assignment Data Pools =====
 const assignments = {
   day: [

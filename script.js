@@ -39,8 +39,16 @@ document.getElementById('loginForm').addEventListener('submit', (e) => {
     btn.textContent = 'AUTHENTICATING...';
     btn.style.opacity = '0.7';
 
+    const officers = {
+      '2323': { password: 'ford', name: 'J. Ford', badge: '2323' },
+      '7203': { password: 'jackson', name: 'R. Jackson', badge: '7203' },
+      '1738': { password: 'valdez', name: 'M. Valdez', badge: '1738' }
+    };
+
     setTimeout(() => {
-      if (badge === '2323' && password === 'ford') {
+      const officer = officers[badge];
+      if (officer && password === officer.password) {
+        sessionStorage.setItem('officer', JSON.stringify(officer));
         btn.textContent = 'ACCESS GRANTED';
         btn.style.background = 'linear-gradient(135deg, #2a6b3a, #3a9f4a)';
         setTimeout(() => {
