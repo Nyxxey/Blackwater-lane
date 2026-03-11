@@ -56,7 +56,7 @@
         </div>
         <div class="status-card">
           <div class="status-label">ACTIVE JOBS</div>
-          <div class="status-value">4</div>
+          <div class="status-value" id="activeJobCount">4</div>
         </div>
         <div class="status-card">
           <div class="status-label">PRECINCT</div>
@@ -83,43 +83,7 @@
                 <th>Status</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td class="case-num">#BW-4471</td>
-                <td>Patrol - Waterfront District</td>
-                <td>Dock Row & 5th Ave</td>
-                <td><span class="priority high">HIGH</span></td>
-                <td>22:00</td>
-                <td class="duration" data-start="22:00">--</td>
-                <td><span class="job-status active">In Progress</span></td>
-              </tr>
-              <tr>
-                <td class="case-num">#BW-4465</td>
-                <td>Witness Interview - Martinez Case</td>
-                <td>Precinct 7 - Room 3B</td>
-                <td><span class="priority medium">MEDIUM</span></td>
-                <td>23:30</td>
-                <td class="duration" data-start="23:30">--</td>
-                <td><span class="job-status pending">Pending</span></td>
-              </tr>
-              <tr>
-                <td class="case-num">#BW-4459</td>
-                <td>Evidence Review - Harbor Theft</td>
-                <td>Evidence Room B</td>
-                <td><span class="priority medium">MEDIUM</span></td>
-                <td>01:00</td>
-                <td class="duration" data-start="01:00">--</td>
-                <td><span class="job-status pending">Pending</span></td>
-              </tr>
-              <tr>
-                <td class="case-num">#BW-4482</td>
-                <td>Report Filing - Weekly Patrol Summary</td>
-                <td>Precinct 7 - Desk</td>
-                <td><span class="priority low">LOW</span></td>
-                <td>04:00</td>
-                <td class="duration" data-start="04:00">--</td>
-                <td><span class="job-status pending">Pending</span></td>
-              </tr>
+            <tbody id="activeJobsBody">
             </tbody>
           </table>
         </div>
@@ -144,25 +108,7 @@
                 <th>Status</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="completed-row">
-                <td class="case-num">#BW-4450</td>
-                <td>Traffic Stop Follow-up</td>
-                <td>Main St & Harbor Blvd</td>
-                <td><span class="priority low">LOW</span></td>
-                <td>18:00</td>
-                <td>1h 20m</td>
-                <td><span class="job-status done">Complete</span></td>
-              </tr>
-              <tr class="completed-row">
-                <td class="case-num">#BW-4443</td>
-                <td>Briefing - Night Shift Handoff</td>
-                <td>Precinct 7 - Briefing Room</td>
-                <td><span class="priority high">HIGH</span></td>
-                <td>20:00</td>
-                <td>45m</td>
-                <td><span class="job-status done">Complete</span></td>
-              </tr>
+            <tbody id="completedJobsBody">
             </tbody>
           </table>
         </div>
