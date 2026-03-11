@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackwater PD — Records Database</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Login Screen -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-rain"></div>
+    <div class="login-container">
+      <div class="login-badge">
+        <svg viewBox="0 0 100 120" width="80" height="96" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M50 5 L90 25 L90 70 L50 115 L10 70 L10 25 Z" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.4)"/>
+          <circle cx="50" cy="55" r="20" stroke="rgba(201,168,76,0.5)" fill="none"/>
+          <text x="50" y="60" text-anchor="middle" fill="rgba(201,168,76,0.7)" font-size="14" font-family="Inter">RDB</text>
+          <text x="50" y="30" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="8" font-family="Inter" letter-spacing="2">BLACKWATER</text>
+          <text x="50" y="95" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-size="7" font-family="Inter" letter-spacing="1">RECORDS DIV.</text>
+        </svg>
+      </div>
+      <h1 class="login-title">Records Database</h1>
+      <p class="login-subtitle">Blackwater Police Department — Authorized Access Only</p>
+
+      <form class="login-form" id="loginForm">
+        <div class="form-group">
+          <label for="badgeNumber">BADGE NUMBER</label>
+          <input type="text" id="badgeNumber" placeholder="Enter badge number" autocomplete="off" required>
+        </div>
+        <div class="form-group">
+          <label for="password">ACCESS CODE</label>
+          <input type="password" id="password" placeholder="Enter access code" required>
+        </div>
+        <button type="submit" class="btn-login" id="loginBtn">ACCESS DATABASE</button>
+        <p class="login-error" id="loginError"></p>
+      </form>
+
+      <div class="login-footer">
+        <p>All access is monitored and logged. Unauthorized access is a federal offense.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Records Dashboard -->
+  <div class="dashboard" id="dashboard" style="display:none;">
+    <!-- Top Nav -->
+    <nav class="topnav">
+      <div class="topnav-left">
+        <span class="topnav-badge">★</span>
+        <div>
+          <span class="topnav-title">BLACKWATER</span>
+          <span class="topnav-sub">RECORDS DATABASE</span>
+        </div>
+      </div>
+      <div class="topnav-right">
+        <span class="topnav-officer" id="navOfficer">Officer —</span>
+        <button class="btn-logout" id="logoutBtn">LOG OUT</button>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="records-main">
+      <div class="records-header">
+        <div>
+          <h1>Suspect Records</h1>
+          <p class="records-count" id="recordsCount">Loading records...</p>
+        </div>
+        <div class="records-clock">
+          <span id="clockTime">--:--:-- --</span>
+          <span id="clockDate">Loading...</span>
+        </div>
+      </div>
+
+      <!-- Search & Filters -->
+      <div class="search-bar">
+        <div class="search-input-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" id="searchInput" placeholder="Search by name, code, alias, or case number...">
+        </div>
+        <div class="filter-group">
+          <select id="statusFilter">
+            <option value="all">All Statuses</option>
+            <option value="wanted">Wanted</option>
+            <option value="in-custody">In Custody</option>
+            <option value="released">Released</option>
+            <option value="under-investigation">Under Investigation</option>
+            <option value="cleared">Cleared</option>
+          </select>
+          <select id="threatFilter">
+            <option value="all">All Threat Levels</option>
+            <option value="critical">Critical</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat-card">
+          <span class="stat-label">TOTAL RECORDS</span>
+          <span class="stat-value" id="statTotal">—</span>
+        </div>
+        <div class="stat-card stat-wanted">
+          <span class="stat-label">WANTED</span>
+          <span class="stat-value" id="statWanted">—</span>
+        </div>
+        <div class="stat-card stat-custody">
+          <span class="stat-label">IN CUSTODY</span>
+          <span class="stat-value" id="statCustody">—</span>
+        </div>
+        <div class="stat-card stat-investigation">
+          <span class="stat-label">UNDER INVESTIGATION</span>
+          <span class="stat-value" id="statInvestigation">—</span>
+        </div>
+      </div>
+
+      <!-- Records Table -->
+      <div class="table-wrap">
+        <table class="records-table">
+          <thead>
+            <tr>
+              <th>CODE</th>
+              <th>NAME</th>
+              <th>ALIAS</th>
+              <th>DOB</th>
+              <th>LAST KNOWN LOCATION</th>
+              <th>THREAT LEVEL</th>
+              <th>STATUS</th>
+              <th>CASE #</th>
+            </tr>
+          </thead>
+          <tbody id="recordsBody">
+          </tbody>
+        </table>
+      </div>
+      <p class="no-results" id="noResults" style="display:none;">No records match your search criteria.</p>
+    </main>
+
+    <!-- Record Detail Modal -->
+    <div class="modal-overlay" id="detailModal">
+      <div class="modal-content">
+        <button class="modal-close" id="closeModal">&times;</button>
+        <div class="modal-header">
+          <div class="modal-mugshot" id="modalMugshot">?</div>
+          <div class="modal-title-block">
+            <h2 id="modalName">—</h2>
+            <p class="modal-alias" id="modalAlias">—</p>
+            <div class="modal-badges">
+              <span class="modal-code" id="modalCode">—</span>
+              <span class="modal-status" id="modalStatus">—</span>
+              <span class="modal-threat" id="modalThreat">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="modal-grid">
+            <div class="modal-field"><label>Date of Birth</label><span id="modalDob">—</span></div>
+            <div class="modal-field"><label>Gender</label><span id="modalGender">—</span></div>
+            <div class="modal-field"><label>Height</label><span id="modalHeight">—</span></div>
+            <div class="modal-field"><label>Weight</label><span id="modalWeight">—</span></div>
+            <div class="modal-field"><label>Last Known Address</label><span id="modalAddress">—</span></div>
+            <div class="modal-field"><label>Case Number</label><span id="modalCase">—</span></div>
+            <div class="modal-field"><label>Arresting Officer</label><span id="modalOfficer">—</span></div>
+            <div class="modal-field"><label>Date Entered</label><span id="modalDateEntered">—</span></div>
+          </div>
+          <div class="modal-section">
+            <h3>Known Associates</h3>
+            <p id="modalAssociates">—</p>
+          </div>
+          <div class="modal-section">
+            <h3>Criminal History</h3>
+            <p id="modalHistory">—</p>
+          </div>
+          <div class="modal-section">
+            <h3>Case Notes</h3>
+            <p id="modalNotes">—</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Record accessed by <span id="modalAccessedBy">—</span> on <span id="modalAccessDate">—</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="dash-footer">
+      <p>&copy; 2026 Blackwater Police Department — Records Database v1.0 — All Access Logged</p>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

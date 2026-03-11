@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="200" height="220">
+  <defs>
+    <!-- Badge body gradient - deep navy blue -->
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2a4a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0d1b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a1428;stop-opacity:1" />
+    </linearGradient>
+    <!-- Gold rim gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5d060" />
+      <stop offset="30%" style="stop-color:#e8b820" />
+      <stop offset="60%" style="stop-color:#fce37a" />
+      <stop offset="100%" style="stop-color:#c8960c" />
+    </linearGradient>
+    <!-- Inner shine -->
+    <linearGradient id="shineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.08" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </linearGradient>
+    <!-- Star gold -->
+    <linearGradient id="starGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fce37a" />
+      <stop offset="50%" style="stop-color:#e8b820" />
+      <stop offset="100%" style="stop-color:#c8960c" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Drop shadow group -->
+  <g filter="url(#shadow)">
+
+    <!-- ===== BADGE SHAPE: 7-point star shield ===== -->
+    <!-- Outer gold rim for the shield -->
+    <!-- Shield outer gold border -->
+    <path d="M100,8 L130,18 L155,8 L168,35 L190,50 L182,78 L192,105 L175,128 L165,158 L140,175 L100,192 L60,175 L35,158 L25,128 L8,105 L18,78 L10,50 L32,35 L45,18 L70,8 Z"
+          fill="url(#goldGrad)" />
+
+    <!-- Shield inner dark body -->
+    <path d="M100,16 L127,25 L150,16 L162,40 L182,54 L174,79 L184,103 L168,124 L159,152 L136,168 L100,184 L64,168 L41,152 L32,124 L16,103 L26,79 L18,54 L38,40 L50,25 Z"
+          fill="url(#badgeGrad)" />
+
+    <!-- Inner shine overlay -->
+    <path d="M100,16 L127,25 L150,16 L162,40 L182,54 L174,79 L184,103 L168,124 L159,152 L136,168 L100,184 L64,168 L41,152 L32,124 L16,103 L26,79 L18,54 L38,40 L50,25 Z"
+          fill="url(#shineGrad)" />
+
+    <!-- ===== INNER GOLD RING ===== -->
+    <ellipse cx="100" cy="102" rx="56" ry="58" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" />
+    <ellipse cx="100" cy="102" rx="52" ry="54" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.5" />
+
+    <!-- ===== TOP EAGLE / STAR DECORATION ===== -->
+    <!-- Small decorative 5-point star at top -->
+    <polygon points="100,30 103.5,40 114,40 105.5,46 108.5,56 100,50 91.5,56 94.5,46 86,40 96.5,40"
+             fill="url(#starGold)" filter="url(#glow)" />
+
+    <!-- ===== MAIN "PD" TEXT ===== -->
+    <text x="100" y="118"
+          text-anchor="middle"
+          font-family="'Georgia', 'Palatino Linotype', serif"
+          font-size="46"
+          font-weight="bold"
+          letter-spacing="2"
+          fill="url(#goldGrad)"
+          filter="url(#glow)">PD</text>
+
+    <!-- Thin gold rule under PD -->
+    <line x1="66" y1="124" x2="134" y2="124" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.8" />
+
+    <!-- ===== DECORATIVE CORNER STARS ===== -->
+    <!-- Small stars at left and right of inner ring -->
+    <polygon points="44,102 46,108 52,108 47.5,111.5 49.5,117.5 44,114 38.5,117.5 40.5,111.5 36,108 42,108"
+             fill="url(#starGold)" opacity="0.8" transform="scale(0.7) translate(20,44)" />
+    <polygon points="156,102 158,108 164,108 159.5,111.5 161.5,117.5 156,114 150.5,117.5 152.5,111.5 148,108 154,108"
+             fill="url(#starGold)" opacity="0.8" transform="scale(0.7) translate(-38,44)" />
+
+  </g>
+</svg>
