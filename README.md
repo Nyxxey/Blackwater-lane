@@ -1,7 +1,4 @@
-This is the repo for the Blackwater lane ARG
-here will be most of the files for the ARG like videos, powerpoints and more if you dont want spilers dont look at files do not touch
-
-
-
+this is for devs and myself only don't look
+(i cant do anything about it but them you lose out on all the fun)
 
 Aolf hyl uva ylhs jvwz kvu'a ilspcl aolt.
