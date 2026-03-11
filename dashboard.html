@@ -123,6 +123,46 @@
     </div>
   </footer>
 
+  <!-- Case Detail Modal -->
+  <div class="case-modal-overlay" id="caseModal">
+    <div class="case-modal">
+      <div class="case-modal-header">
+        <div>
+          <span class="case-modal-num" id="modalCaseNum">#BW-0000</span>
+          <span class="case-modal-priority" id="modalPriority">HIGH</span>
+        </div>
+        <button class="case-modal-close" id="modalClose">&times;</button>
+      </div>
+      <h2 class="case-modal-title" id="modalTitle">Assignment Title</h2>
+      <div class="case-modal-meta">
+        <div class="meta-item">
+          <span class="meta-label">LOCATION</span>
+          <span class="meta-value" id="modalLocation">--</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">STATUS</span>
+          <span class="meta-value" id="modalStatus">--</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">START TIME</span>
+          <span class="meta-value" id="modalTime">--</span>
+        </div>
+      </div>
+      <div class="case-modal-section">
+        <h3>Incident Report</h3>
+        <p id="modalReport">--</p>
+      </div>
+      <div class="case-modal-section" id="modalResolutionSection">
+        <h3>Resolution</h3>
+        <p id="modalResolution">--</p>
+      </div>
+      <div class="case-modal-section">
+        <h3>Assigned Officer</h3>
+        <p>Officer J. Ford — Badge #2323 — Precinct 7</p>
+      </div>
+    </div>
+  </div>
+
   <script src="dashboard.js"></script>
 </body>
 </html>
