@@ -1,0 +1,321 @@
+/* ===== Dashboard Layout ===== */
+.dashboard {
+  padding-top: 100px;
+  min-height: calc(100vh - 60px);
+  background:
+    radial-gradient(ellipse at 10% 20%, rgba(42, 74, 107, 0.08) 0%, transparent 50%),
+    var(--noir-black);
+}
+
+/* ===== Officer Nav Info ===== */
+.officer-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.officer-details {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  line-height: 1.2;
+}
+
+.officer-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.officer-badge {
+  font-size: 0.7rem;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+.btn-logout {
+  padding: 8px 18px;
+  background: transparent;
+  border: 1px solid rgba(159, 58, 58, 0.5);
+  color: #c0524f;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all 0.3s;
+}
+
+.btn-logout:hover {
+  background: rgba(159, 58, 58, 0.15);
+  border-color: #c0524f;
+}
+
+/* ===== Dashboard Header ===== */
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dash-welcome h1 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.dash-welcome p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.dash-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.clock-time {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.clock-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* ===== Status Cards ===== */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.status-card {
+  background: var(--noir-dark);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.status-label {
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.status-value {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.status-value.on-duty {
+  color: #4caf7a;
+}
+
+/* ===== Dashboard Sections ===== */
+.dash-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-title h2 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.section-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  background: rgba(74, 143, 212, 0.15);
+  color: var(--accent-glow);
+  border: 1px solid rgba(74, 143, 212, 0.3);
+}
+
+.section-badge.completed {
+  background: rgba(76, 175, 122, 0.1);
+  color: #4caf7a;
+  border-color: rgba(76, 175, 122, 0.3);
+}
+
+/* ===== Jobs Table ===== */
+.jobs-table-wrap {
+  overflow-x: auto;
+}
+
+.jobs-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--noir-dark);
+  border: 1px solid var(--border-color);
+}
+
+.jobs-table thead {
+  background: var(--noir-navy);
+}
+
+.jobs-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.jobs-table td {
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(42, 74, 107, 0.15);
+}
+
+.jobs-table tbody tr {
+  transition: background 0.2s;
+}
+
+.jobs-table tbody tr:hover {
+  background: rgba(42, 74, 107, 0.1);
+}
+
+.case-num {
+  font-weight: 700;
+  color: var(--accent-glow) !important;
+  font-family: monospace;
+  font-size: 0.85rem !important;
+}
+
+.completed-row {
+  opacity: 0.55;
+}
+
+.completed-row:hover {
+  opacity: 0.8;
+}
+
+/* ===== Priority Badges ===== */
+.priority {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.priority.high {
+  background: rgba(207, 73, 68, 0.15);
+  color: #cf4944;
+  border: 1px solid rgba(207, 73, 68, 0.3);
+}
+
+.priority.medium {
+  background: rgba(201, 168, 76, 0.12);
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+.priority.low {
+  background: rgba(76, 175, 122, 0.1);
+  color: #4caf7a;
+  border: 1px solid rgba(76, 175, 122, 0.25);
+}
+
+/* ===== Job Status ===== */
+.job-status {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+}
+
+.job-status.active {
+  background: rgba(74, 143, 212, 0.15);
+  color: var(--accent-glow);
+  border: 1px solid rgba(74, 143, 212, 0.3);
+}
+
+.job-status.pending {
+  background: rgba(201, 168, 76, 0.1);
+  color: var(--gold-light);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.job-status.done {
+  background: rgba(76, 175, 122, 0.1);
+  color: #4caf7a;
+  border: 1px solid rgba(76, 175, 122, 0.2);
+}
+
+/* ===== Dashboard Footer ===== */
+.dash-footer {
+  background: var(--noir-dark);
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 968px) {
+  .status-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dash-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .dash-clock {
+    align-items: flex-start;
+  }
+
+  .officer-info {
+    gap: 1rem;
+  }
+
+  .officer-details {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard {
+    padding-top: 85px;
+  }
+}

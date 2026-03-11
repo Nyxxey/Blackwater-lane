@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Officer Portal - Blackwater PD</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Dashboard Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <div class="badge-icon">&#9733;</div>
+        <div class="brand-text">
+          <span class="brand-name">BLACKWATER</span>
+          <span class="brand-sub">OFFICER PORTAL</span>
+        </div>
+      </div>
+      <div class="officer-info">
+        <div class="officer-details">
+          <span class="officer-name">Officer J. Ford</span>
+          <span class="officer-badge">Badge #2323</span>
+        </div>
+        <a href="index.html" class="btn-logout" id="logoutBtn">LOG OUT</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <main class="dashboard">
+    <div class="container">
+      <!-- Welcome Header -->
+      <div class="dash-header">
+        <div class="dash-welcome">
+          <h1>Officer Dashboard</h1>
+          <p>Welcome back, Officer Ford. Stay vigilant.</p>
+        </div>
+        <div class="dash-clock">
+          <span class="clock-time" id="clockTime">--:--:--</span>
+          <span class="clock-date" id="clockDate">Loading...</span>
+        </div>
+      </div>
+
+      <!-- Status Cards -->
+      <div class="status-grid">
+        <div class="status-card">
+          <div class="status-label">STATUS</div>
+          <div class="status-value on-duty">ON DUTY</div>
+        </div>
+        <div class="status-card">
+          <div class="status-label">SHIFT</div>
+          <div class="status-value" id="currentShift">Night Watch</div>
+        </div>
+        <div class="status-card">
+          <div class="status-label">ACTIVE JOBS</div>
+          <div class="status-value">4</div>
+        </div>
+        <div class="status-card">
+          <div class="status-label">PRECINCT</div>
+          <div class="status-value">7th District</div>
+        </div>
+      </div>
+
+      <!-- Current Jobs Table -->
+      <div class="dash-section">
+        <div class="section-title">
+          <h2>Current Assignments</h2>
+          <span class="section-badge">Active</span>
+        </div>
+        <div class="jobs-table-wrap">
+          <table class="jobs-table">
+            <thead>
+              <tr>
+                <th>Case #</th>
+                <th>Assignment</th>
+                <th>Location</th>
+                <th>Priority</th>
+                <th>Start Time</th>
+                <th>Duration</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="case-num">#BW-4471</td>
+                <td>Patrol - Waterfront District</td>
+                <td>Dock Row & 5th Ave</td>
+                <td><span class="priority high">HIGH</span></td>
+                <td>22:00</td>
+                <td class="duration" data-start="22:00">--</td>
+                <td><span class="job-status active">In Progress</span></td>
+              </tr>
+              <tr>
+                <td class="case-num">#BW-4465</td>
+                <td>Witness Interview - Martinez Case</td>
+                <td>Precinct 7 - Room 3B</td>
+                <td><span class="priority medium">MEDIUM</span></td>
+                <td>23:30</td>
+                <td class="duration" data-start="23:30">--</td>
+                <td><span class="job-status pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td class="case-num">#BW-4459</td>
+                <td>Evidence Review - Harbor Theft</td>
+                <td>Evidence Room B</td>
+                <td><span class="priority medium">MEDIUM</span></td>
+                <td>01:00</td>
+                <td class="duration" data-start="01:00">--</td>
+                <td><span class="job-status pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td class="case-num">#BW-4482</td>
+                <td>Report Filing - Weekly Patrol Summary</td>
+                <td>Precinct 7 - Desk</td>
+                <td><span class="priority low">LOW</span></td>
+                <td>04:00</td>
+                <td class="duration" data-start="04:00">--</td>
+                <td><span class="job-status pending">Pending</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Completed Jobs -->
+      <div class="dash-section">
+        <div class="section-title">
+          <h2>Completed Today</h2>
+          <span class="section-badge completed">Closed</span>
+        </div>
+        <div class="jobs-table-wrap">
+          <table class="jobs-table">
+            <thead>
+              <tr>
+                <th>Case #</th>
+                <th>Assignment</th>
+                <th>Location</th>
+                <th>Priority</th>
+                <th>Start Time</th>
+                <th>Duration</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="completed-row">
+                <td class="case-num">#BW-4450</td>
+                <td>Traffic Stop Follow-up</td>
+                <td>Main St & Harbor Blvd</td>
+                <td><span class="priority low">LOW</span></td>
+                <td>18:00</td>
+                <td>1h 20m</td>
+                <td><span class="job-status done">Complete</span></td>
+              </tr>
+              <tr class="completed-row">
+                <td class="case-num">#BW-4443</td>
+                <td>Briefing - Night Shift Handoff</td>
+                <td>Precinct 7 - Briefing Room</td>
+                <td><span class="priority high">HIGH</span></td>
+                <td>20:00</td>
+                <td>45m</td>
+                <td><span class="job-status done">Complete</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="dash-footer">
+    <div class="container">
+      <p>&copy; 2026 Blackwater Police Department &mdash; Officer Portal v2.4 &mdash; Authorized Access Only</p>
+    </div>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
